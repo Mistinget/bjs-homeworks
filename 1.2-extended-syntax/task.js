@@ -41,7 +41,7 @@ function askDrink(name, dateOfBirthday) {
     new Date().getFullYear();
     let yearsOld = new Date().getFullYear() - dateOfBirthday.getFullYear();
 
-    if (yearsOld > 18 || yearsOld === 18) {
+    if (yearsOld >= 18) {
         return `Не желаете ли олд-фэшн, ${name}?`;
     } else {
         return `Сожалею, ${name}, но я не могу вам продать алкоголь. Могу предложить вам замечательный клюквенный компот!`;
