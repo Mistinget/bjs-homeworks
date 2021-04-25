@@ -1,6 +1,7 @@
 "use strikt";
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
+    let today = new Date;
     console.log(typeof percent, typeof contribution, typeof amount);
     if (typeof percent === "undefined" || Number(percent) <= 0) {
         return `Некорректный ввод "Процентная ставка" ${percent}`;
@@ -8,10 +9,11 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
         return `Некорректный ввод "Начальный взнос" ${contribution}`;
     } else if (typeof amount === "undefined" || Number(amount) <= 0) {
         return `Некорректный ввод "Общая стоимость" ${amount}`;
+    } else if (isNaN(date) || (Number(date) - Number(today)) <= 30) {
+        return `Некорректный ввод "Срок ипотеки" ${date}`;
     }
 
     let P = percent / 100 / 12; // 1/12 процентной ставки
-    let today = new Date;
     console.log(date.getFullYear(), today.getFullYear());
     //кол-во выплач. месяцев:
     let amountMonth = ((date.getFullYear() - today.getFullYear()) * 12 + (date.getMonth() - today.getMonth()));
