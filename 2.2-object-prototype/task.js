@@ -1,7 +1,30 @@
-//String.prototype.isPalindrome - для задачи №1
+String.prototype.isPalindrome = function isPalindrome() {
+    let string = this.toLowerCase().split(' ').join('');
+    let arr = string.split('');
+    let arr1 = arr.reverse();
+    let strReverse = arr1.join('');
+
+    if (strReverse.split(' ').join('') === string) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log("А роза упала на лапу Азора");
+
 
 function getAverageMark(marks) {
-    // код для задачи №2 писать здесь
+    let sum = 0; //общее чисчисло баллов
+    let length = marks.length;
+    if (length === 0) {
+        return 0;
+    }
+    for (let i = 0; i < length; i++) {
+        sum += marks[i];
+    }
+    let average = sum / length;
+    let roundedAverage = Math.round(average);
+    return roundedAverage; //средняя оценка по предмету
     // return averageMark
 }
 
