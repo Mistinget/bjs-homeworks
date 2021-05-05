@@ -1,10 +1,11 @@
 String.prototype.isPalindrome = function isPalindrome() {
-    let string = this.toLowerCase().split(' ').join('');
-    let arr = string.split('');
-    let arr1 = arr.reverse();
-    let strReverse = arr1.join('');
-
-    if (strReverse.split(' ').join('') === string) {
+    const string = this.toLowerCase().split(' ').join('');
+    // let arr = string.split('');
+    // let arr1 = arr.reverse();
+    // const strReverse = arr1.join('');
+    const strReverse = string.split('').reverse().join('');
+    if (strReverse === string) {
+        // if (strReverse.split(' ').join('') === string) {
         return true;
     } else {
         return false;
